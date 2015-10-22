@@ -9,6 +9,7 @@
     "url": "https://github.com/typhonjs/typhon-premium-parse/typhon-premium-parse.git"
   },
   "jspm": {
+    "main": false,
     "dependencies": {
       "backbone": "github:typhonjs/typhon-backbone-parse@master",
       "parse": "npm:parse@^1.6.7",
