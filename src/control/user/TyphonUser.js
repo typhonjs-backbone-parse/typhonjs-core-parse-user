@@ -9,7 +9,7 @@ import _          from 'underscore';
 import Parse      from 'parse';
 
 import eventbus   from 'mainEventbus';
-
+console.log("typhon-premium-parse - TyphonUser");
 class TyphonUser
 {
    constructor()
