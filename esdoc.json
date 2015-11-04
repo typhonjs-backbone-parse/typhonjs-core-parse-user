@@ -1,5 +1,15 @@
 {
-   "title": "Backbone-Parse-Typhon-ES6",
+   "title": "typhon-premium-parse",
    "source": "src",
-   "destination": "docs"
+   "destination": "docs",
+   "plugins":
+   [
+      {
+         "name": "esdoc-plugin-jspm",
+         "option":
+         {
+            "packages": ["backbone"]
+         }
+      }
+   ]
 }

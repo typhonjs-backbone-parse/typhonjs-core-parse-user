@@ -7,14 +7,14 @@
 
 import _          from 'underscore';
 import Parse      from 'parse';
-
 import eventbus   from 'mainEventbus';
-console.log("typhon-premium-parse - TyphonUser");
+import                 'parseinit';
+
 class TyphonUser
 {
    constructor()
    {
-      let user = Parse.User.current();
+      const user = Parse.User.current();
 
       eventbus.on('typhon:user:current', this.getCurrentUser, this);
       eventbus.on('typhon:user:escape', this.escape, this);
@@ -38,10 +38,10 @@ class TyphonUser
          // Identify the user and emit an event with the current user identity.
          eventbus.trigger('typhon:user:current:identity',
          {
-            email:      user.getEmail(),
-            name:       user.escape('username'),
+            email: user.getEmail(),
+            name: user.escape('username'),
             created_at: user.createdAt.getTime(),
-            id:         user.id
+            id: user.id
          });
       }
    }
@@ -53,7 +53,7 @@ class TyphonUser
          throw new Error('escape - key is undefined or null.');
       }
 
-      let user = Parse.User.current();
+      const user = Parse.User.current();
 
       if (user === null)
       {
@@ -70,7 +70,7 @@ class TyphonUser
          throw new Error('get - key is undefined or null.');
       }
 
-      let user = Parse.User.current();
+      const user = Parse.User.current();
 
       if (user === null)
       {
@@ -87,7 +87,7 @@ class TyphonUser
          throw new Error('getHTTPSUrl - key is undefined or null.');
       }
 
-      let user = Parse.User.current();
+      const user = Parse.User.current();
 
       if (user === null)
       {
@@ -139,10 +139,10 @@ class TyphonUser
                // Identify the user and emit an event with the current user identity.
                eventbus.trigger('typhon:user:current:identity',
                {
-                  email:      user.getEmail(),
-                  name:       user.escape('username'),
+                  email: user.getEmail(),
+                  name: user.escape('username'),
                   created_at: user.createdAt.getTime(),
-                  id:         user.id
+                  id: user.id
                });
             }
             resolve(user !== null);
@@ -187,7 +187,7 @@ class TyphonUser
 
          if (useCurrentUserEmail)
          {
-            let user = Parse.User.current();
+            const user = Parse.User.current();
 
             if (user === null)
             {
@@ -217,7 +217,7 @@ class TyphonUser
    {
       return new Promise((resolve, reject) =>
       {
-         let user = Parse.User.current();
+         const user = Parse.User.current();
 
          if (user === null)
          {
@@ -247,7 +247,7 @@ class TyphonUser
          throw new TypeError('set - data is not an object');
       }
 
-      let user = Parse.User.current();
+      const user = Parse.User.current();
 
       if (user === null)
       {
@@ -258,7 +258,7 @@ class TyphonUser
       {
          if (!_.isString(key))
          {
-            console.log('set - skipping key as it is not a string: ' +key);
+            console.log(`set - skipping key as it is not a string:  +${key}`);
          }
          else
          {
@@ -293,7 +293,7 @@ class TyphonUser
             throw new TypeError('setAndSaveImages - images is undefined or is not an array.');
          }
 
-         let user = Parse.User.current();
+         const user = Parse.User.current();
 
          if (user === null)
          {
@@ -305,8 +305,8 @@ class TyphonUser
             resolve();
          }
 
-         let imageMap = new Map();
-         let imageFileArray = [];
+         const imageMap = new Map();
+         const imageFileArray = [];
 
          _.each(images, (image, index) =>
          {
@@ -318,21 +318,21 @@ class TyphonUser
                mimeType = image.src.match(/^data:(.*?);/)[1];
                extension = mimeType.split('/')[1];
             }
-            catch(error) {}
+            catch(error) { /* ignore */ }
 
             if (Object.prototype.toString.call(image) !== '[object HTMLImageElement]' || mimeType === null ||
              extension === null)
             {
-               throw new Error("setAndSaveImages - value at index '" +index
-                +"' is not a HTMLImageElement or mimeType / extension could not be determined.");
+               throw new Error(`setAndSaveImages - value at index '${index}' is not a HTMLImageElement or mimeType /
+                extension could not be determined.`);
             }
 
-            let filename = 'photo-' +image.width +'px.' +extension;
+            const filename = `photo-${image.width}px.${extension}`;
 
-            let file = new Parse.File(filename,
+            const file = new Parse.File(filename,
              { base64: image.src.replace(/^data:image\/(png|jpeg|jpg|gif|bmp);base64,/, '') }, mimeType);
 
-            imageMap.set('image' +image.width +'px', file);
+            imageMap.set(`image${image.width}px`, file);
             imageFileArray.push(file);
          });
 
@@ -347,7 +347,7 @@ class TyphonUser
             return user.save();
          }).then(() =>
          {
-            let imageKeys = [...imageMap.keys()];
+            const imageKeys = [...imageMap.keys()];
 
             eventbus.trigger('typhon:user:current:images:changed', imageKeys);
 
@@ -397,10 +397,10 @@ class TyphonUser
                // Identify the user and emit an event with the current user identity.
                eventbus.trigger('typhon:user:current:identity',
                {
-                  email:      user.getEmail(),
-                  name:       user.escape('username'),
+                  email: user.getEmail(),
+                  name: user.escape('username'),
                   created_at: user.createdAt.getTime(),
-                  id:         user.id
+                  id: user.id
                });
             }
             resolve(user !== null);
@@ -414,7 +414,7 @@ class TyphonUser
 
    toJSON()
    {
-      let user = Parse.User.current();
+      const user = Parse.User.current();
 
       if (user === null)
       {

@@ -1,0 +1,22 @@
+{
+   "entryPoints":
+   [
+      {
+         "inMemoryBuild": true,
+         "destBaseDir": "./dist",
+         "destFilename": "typhon-premium-parse.js",
+         "formats": ["amd"],
+         "mangle": false,
+         "minify": false,
+         "src": "test/fixture/maintest.js - [jquery] - [underscore]",
+         "extraConfig":
+         {
+            "meta":
+            {
+               "jquery": { "build": false },
+               "underscore": { "build": false }
+            }
+         }
+      }
+   ]
+}

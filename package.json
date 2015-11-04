@@ -9,10 +9,10 @@
     "url": "https://github.com/typhonjs/typhon-premium-parse/typhon-premium-parse.git"
   },
   "jspm": {
-    "main": false,
     "dependencies": {
-      "backbone": "github:typhonjs/typhon-backbone-parse@master",
-      "parse": "npm:parse@^1.6.7",
+      "backbone": "github:typhonjs/backbone-parse-es6@master",
+      "parse": "npm:parse@^1.6.8",
+      "parseinit": "github:typhonjs/typhon-core-parse-init@master",
       "underscore": "npm:underscore@^1.8.3"
     },
     "devDependencies": {
@@ -22,10 +22,9 @@
     }
   },
   "devDependencies": {
-    "jspm": "^0.16.13",
     "gulp": "^3.9.0",
-    "gulp-esdoc": "^0.1.0",
-    "gulp-eslint": "^1.0.0",
-    "yargs": "^3.27.0"
+    "jspm": "^0.16.14",
+    "typhon-config-eslint-es6": "^0.1.0",
+    "typhon-core-gulptasks": "^0.1.0"
   }
 }
