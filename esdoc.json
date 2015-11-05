@@ -1,5 +1,5 @@
 {
-   "title": "typhon-premium-parse",
+   "title": "typhonjs-premium-parse",
    "source": "src",
    "destination": "docs",
    "plugins":

@@ -3,8 +3,6 @@
    [
       {
          "inMemoryBuild": true,
-         "destBaseDir": "./dist",
-         "destFilename": "typhon-premium-parse.js",
          "formats": ["amd"],
          "mangle": false,
          "minify": false,
