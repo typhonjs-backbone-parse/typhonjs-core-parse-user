@@ -1,8 +1,3 @@
-/**
- * typhon-user.js -- Provides a facade around Parse.User functionality enabling interaction via methods, but more
- * importantly the main eventbus. ES2015 Promises are used for all asynchronous operations.
- */
-
 'use strict';
 
 import _          from 'underscore';
@@ -10,6 +5,10 @@ import Parse      from 'parse';
 import eventbus   from 'mainEventbus';
 import                 'parseinit';
 
+/**
+ * Provides a facade around Parse.User functionality enabling interaction via methods, but more
+ * importantly the main eventbus. ES2015 Promises are used for all asynchronous operations.
+ */
 class TyphonUser
 {
    constructor()
@@ -46,6 +45,12 @@ class TyphonUser
       }
    }
 
+   /**
+    * Returns an escaped value by key.
+    *
+    * @param {string}   key - key
+    * @returns {*}
+    */
    escape(key = null)
    {
       if (_.isUndefined(key) || key === null)

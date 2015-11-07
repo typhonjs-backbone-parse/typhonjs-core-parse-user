@@ -5,10 +5,22 @@
    "plugins":
    [
       {
-         "name": "esdoc-plugin-jspm",
+         "name": "esdoc-plugin-jspm"
+      },
+
+      {
+         "name": "esdoc-plugin-extends-replace",
          "option":
          {
-            "packages": ["backbone"]
+            "replace":
+            {
+               "Backbone.Collection": "backbone-parse-es6@master/src/ParseCollection",
+               "Backbone.Events": "backbone-es6@master/src/Events",
+               "Backbone.History": "backbone-es6@master/src/History",
+               "Backbone.Model": "backbone-parse-es6@master/src/ParseModel",
+               "Backbone.Router": "backbone-es6@master/src/Router",
+               "Backbone.View": "backbone-es6@master/src/View"
+            }
          }
       }
    ]
