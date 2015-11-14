@@ -23,5 +23,13 @@
             }
          }
       }
-   ]
+   ],
+   "manual":
+   {
+      "overview": ["./manual/overview.md"],
+      "installation": ["./manual/installation.md"],
+      "tutorial": ["./manual/tutorial.md"],
+      "faq": ["./manual/faq.md"],
+      "changelog": ["./CHANGELOG.md"]
+   }
 }
