@@ -3,10 +3,10 @@
    [
       {
          "inMemoryBuild": true,
-         "formats": ["amd"],
+         "formats": ["umd"],
          "mangle": false,
          "minify": false,
-         "src": "test/fixture/maintest.js - [jquery] - [underscore]",
+         "src": "test/fixture/maintest.js",
          "extraConfig":
          {
             "meta":

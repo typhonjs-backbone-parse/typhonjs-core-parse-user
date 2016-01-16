@@ -3,7 +3,7 @@
 import _          from 'underscore';
 import Parse      from 'parse';
 import eventbus   from 'mainEventbus';
-import                 'parseinit';
+import                 'typhonjs-core-parse-init';
 
 /**
  * Provides a facade around Parse.User functionality enabling interaction via methods, but more
