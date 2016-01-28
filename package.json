@@ -12,13 +12,13 @@
     "main": false,
     "dependencies": {
       "backbone": "github:typhonjs-parse/backbone-parse-es6@master",
-      "parse": "npm:parse@^1.6.14",
+      "parse": "npm:parse@^1.7.0",
       "typhonjs-core-parse-init": "github:typhonjs/typhonjs-core-parse-init@master",
       "underscore": "npm:underscore@^1.8.3"
     },
     "devDependencies": {
-      "babel": "npm:babel-core@^5.8.34",
-      "babel-runtime": "npm:babel-runtime@^5.8.34",
+      "babel": "npm:babel-core@^5.8.35",
+      "babel-runtime": "npm:babel-runtime@^5.8.35",
       "core-js": "npm:core-js@^1.2.6"
     },
     "files": [
@@ -31,8 +31,8 @@
   },
   "devDependencies": {
     "gulp": "^3.9.0",
-    "jspm": "^0.16.24",
+    "jspm": "^0.16.25",
     "typhonjs-config-eslint": "^0.2.1",
-    "typhonjs-core-gulptasks": "^0.4.2"
+    "typhonjs-core-gulptasks": "^0.5.0"
   }
 }
