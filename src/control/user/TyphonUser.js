@@ -263,11 +263,11 @@ class TyphonUser
       {
          if (!_.isString(key))
          {
-            console.log(`set - skipping key as it is not a string:  +${key}`);
+            throw new TypeError(`set - key is not a string: ${key}`);
          }
          else
          {
-            switch(key)
+            switch (key)
             {
                case 'email':
                   user.setEmail(value);
@@ -323,7 +323,7 @@ class TyphonUser
                mimeType = image.src.match(/^data:(.*?);/)[1];
                extension = mimeType.split('/')[1];
             }
-            catch(error) { /* ignore */ }
+            catch (error) { /* ignore */ }
 
             if (Object.prototype.toString.call(image) !== '[object HTMLImageElement]' || mimeType === null ||
              extension === null)

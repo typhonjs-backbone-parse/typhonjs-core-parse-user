@@ -1,38 +1,35 @@
 {
-  "name": "typhonjs-premium-parse",
+  "name": "typhonjs-core-parse-user",
   "version": "0.1.0",
   "homepage": "http://js.typhonrt.org/",
   "description": "TyphonJS Premium Parse",
-  "license": "MIT",
+  "license": "MPL-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/typhonjs/typhonjs-premium-parse/typhonjs-premium-parse.git"
+    "url": "https://github.com/typhonjs-backbone-parse/typhonjs-core-parse-user/typhonjs-core-parse-user.git"
+  },
+  "bugs": {
+    "url": "https://github.com/typhonjs-backbone-parse/typhonjs-core-parse-user/issues"
   },
   "jspm": {
     "main": false,
     "dependencies": {
-      "backbone": "github:typhonjs-parse/backbone-parse-es6@master",
+      "backbone": "github:typhonjs-backbone-parse/backbone-parse-es6@master",
       "parse": "npm:parse@^1.7.0",
-      "typhonjs-core-parse-init": "github:typhonjs/typhonjs-core-parse-init@master",
+      "typhonjs-core-parse-init": "github:typhonjs-backbone-parse/typhonjs-core-parse-init@master",
       "underscore": "npm:underscore@^1.8.3"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.35",
       "babel-runtime": "npm:babel-runtime@^5.8.35",
       "core-js": "npm:core-js@^1.2.6"
-    },
-    "files": [
-      "src/",
-      "esdoc.json",
-      "package.json",
-      "CHANGELOG.md",
-      "README.md"
-    ]
+    }
   },
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "jspm": "^0.16.25",
-    "typhonjs-config-eslint": "^0.2.1",
-    "typhonjs-core-gulptasks": "^0.5.0"
+    "gulp": "^3.0.0",
+    "jspm": "^0.16.0",
+    "typhonjs-config-eslint": "^0.4.0",
+    "typhonjs-core-gulptasks": "^0.6.0",
+    "typhonjs-npm-build-test": "^0.1.0"
   }
 }
